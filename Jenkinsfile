@@ -32,7 +32,7 @@ pipeline {
     script {
           checkout scm
           docker.withRegistry('', 'DockerRegistryID') {
-          def customImage = docker.build("isims51461/hol-pipeline:${env.BUILD_ID}")
+          def customImage = docker.build("mze2020/hol-pipeline:${env.BUILD_ID}")
           customImage.push()
           }
     }
