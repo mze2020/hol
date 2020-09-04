@@ -26,7 +26,9 @@ pipeline {
           checkout scm
           docker.withRegistry('', 'DockerRegistryID') {
           def customImage = docker.build("mze2020/hol-pipeline:${env.BUILD_ID}")
+          def customImage1 = docker.build("mze2020/hol-pipeline")
           customImage.push()
+          customImage1.push()
           }
     }
         
